@@ -1,0 +1,19 @@
+name: Helm Lint
+
+on:
+  pull_request:
+    branches: master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: azure/setup-helm@v1
+      with:
+        version: '3.0.1'
+      id: install
+    - name: Lint charts
+      run: helm lint ./charts/*
