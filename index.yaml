@@ -3,9 +3,9 @@ entries:
   echo-server:
   - apiVersion: v1
     appVersion: 0.2.0
-    created: "2019-12-19T12:58:57.225786586Z"
+    created: "2019-12-19T13:00:12.533247333Z"
     description: Echo-Server for Kubernetes
-    digest: 21f8c1fc5d5c7857ae1f948726ebef255fcb195a2e43e68941a20a07cddeb500
+    digest: 0d7c5a88bf05970e0cd1018d34912ff667fd0a6b1a3cff6b466c4adc14bf86e4
     home: https://github.com/Ealenn/Echo-Server
     icon: https://ealenn.github.io/Echo-Server/assets/images/ping-pong.png
     keywords:
@@ -21,4 +21,4 @@ entries:
     urls:
     - echo-server-0.1.0.tgz
     version: 0.1.0
-generated: "2019-12-19T12:58:57.225238027Z"
+generated: "2019-12-19T13:00:12.532691936Z"
