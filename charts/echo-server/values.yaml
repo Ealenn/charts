@@ -1,8 +1,11 @@
+# replicaCount -- number of pod replicas
 replicaCount: 1
 
 image:
+  # image.repository -- https://hub.docker.com/r/ealen/echo-server
   repository: ealen/echo-server
-  tag: latest
+  # image.tag -- https://github.com/Ealenn/Echo-Server/releases
+  tag: 0.2.0
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -21,8 +24,11 @@ service:
   type: ClusterIP
   port: 80
 
+# ingress -- ingress configuration
 ingress:
-  enabled: true
+  # ingress.enabled -- Enable ingress
+  enabled: false
+  # ingress.annotations -- example `kubernetes.io/ingress.class: nginx` for Nginx Ingress
   annotations: {}
   hosts:
     - host: cluster.local
@@ -44,12 +50,20 @@ tolerations: []
 
 affinity: {}
 
+# application -- Echo-Server configuration
 application:
+  # application.logs -- Enable and Disable logs Features
   logs:
     ignore:
+      # application.logs.ignore.ping -- Don't log ping request on route `/ping`
       ping: false
+  # application.enable -- Enable and Disable Echo-Server Features
   enable:
+    # application.enable.host -- Enable host in response
     host: true
+    # application.enable.host -- Enable http in response
     http: true
+    # application.enable.host -- Enable request in response
     request: true
+    # application.enable.environment -- Enable environment in response - Show environment variables
     environment: true
