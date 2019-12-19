@@ -1,0 +1,17 @@
+apiVersion: v1
+appVersion: "0.2.0"
+version: 0.1.0
+icon: https://ealenn.github.io/Echo-Server/assets/images/ping-pong.png
+name: echo-server
+description: Echo-Server for Kubernetes
+keywords:
+  - echo
+  - server
+  - rest
+  - test
+home: https://github.com/Ealenn/Echo-Server
+sources:
+  - https://github.com/Ealenn/Echo-Server
+maintainers:
+  - name: Rudy Marchandise
+deprecated: false
