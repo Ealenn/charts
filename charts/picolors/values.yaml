@@ -1,0 +1,51 @@
+# replicaCount -- number of pod replicas
+replicaCount: 1
+
+image:
+  # image.repository -- https://hub.docker.com/r/ealen/picolors
+  repository: ealen/picolors
+  # image.tag -- https://github.com/Ealenn/Picolors/releases
+  tag: 0.1.0
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  name:
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: ClusterIP
+  port: 80
+
+# ingress -- ingress configuration
+ingress:
+  # ingress.enabled -- Enable ingress
+  enabled: false
+  # ingress.annotations -- example `kubernetes.io/ingress.class: nginx` for Nginx Ingress
+  annotations: {}
+  hosts:
+    - host: cluster.local
+      paths: 
+        - /
+  tls: []
+
+resources:
+  limits:
+    cpu: 50m
+    memory: 32Mi
+  requests:
+    cpu: 50m
+    memory: 32Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

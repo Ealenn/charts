@@ -1,0 +1,19 @@
+apiVersion: v2
+appVersion: 0.1.0
+version: 0.1.0
+type: application
+icon: https://ealenn.github.io/helm-ui/icons/picolors.png
+name: picolors
+description: Extract prominent colors from an image
+keywords:
+  - colors
+  - rest
+  - picture
+  - image
+home: https://github.com/Ealenn/Picolors
+sources:
+  - https://github.com/Ealenn/Picolors
+  - https://hub.docker.com/r/ealen/picolors
+maintainers:
+  - name: Rudy Marchandise
+deprecated: false

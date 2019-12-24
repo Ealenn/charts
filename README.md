@@ -19,6 +19,7 @@ helm install ealenn/<chart>
 ## Projects
 
 - [Echo-Server](https://ealenn.github.io/helm-ui/#/chart/echo-server) REST Server Tests (Echo-Server) API
+- [Picolors](https://ealenn.github.io/helm-ui/#/chart/picolors) Get prominent color from an image
 
 ## Tools
 
