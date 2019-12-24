@@ -1,12 +1,3 @@
-echo-server
-===========
-Echo-Server for Kubernetes
-
-Current chart version is `0.1.0`
-
-Source code can be found [here](https://github.com/Ealenn/Echo-Server)
-
-
 
 ## Chart Values
 
