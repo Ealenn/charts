@@ -3,9 +3,9 @@ entries:
   echo-server:
   - apiVersion: v1
     appVersion: 0.2.0
-    created: "2019-12-24T15:22:22.332521549Z"
+    created: "2020-01-15T14:36:04.404552113Z"
     description: Echo-Server for Kubernetes
-    digest: 2d8ed5e1cd5da08f88499014eb6d009b246508e70f4e738ea20fd22b0b96fc3f
+    digest: 166ae4dc083077cd2bf0232136cd49b88ed9afdd36e299923fd4d775991ff31e
     home: https://github.com/Ealenn/Echo-Server
     icon: https://ealenn.github.io/helm-ui/icons/echo-server.png
     keywords:
@@ -24,9 +24,9 @@ entries:
   picolors:
   - apiVersion: v1
     appVersion: 0.1.0
-    created: "2019-12-24T15:22:22.332912157Z"
+    created: "2020-01-15T14:36:04.404918814Z"
     description: Extract prominent colors from an image
-    digest: f754310210eb3dbc7c01fb1ef6137a9ed0bf42f98447d3a7ce0c82457d03e64c
+    digest: 140c656ad1b1a977f3291568081679a44e9da34135162113b3ce0c2b40a64364
     home: https://github.com/Ealenn/Picolors
     icon: https://ealenn.github.io/helm-ui/icons/picolors.png
     keywords:
@@ -43,4 +43,35 @@ entries:
     urls:
     - picolors-0.1.0.tgz
     version: 0.1.0
-generated: "2019-12-24T15:22:22.331859435Z"
+  traefik:
+  - apiVersion: v1
+    appVersion: 1.7.14
+    created: "2020-01-15T14:36:04.40675942Z"
+    description: A Traefik based Kubernetes ingress controller with Let's Encrypt
+      support
+    digest: dd0273ac816256f33ecf06057e562100e875838716d7ea9c0da33df9e35ab48e
+    engine: gotpl
+    home: https://traefik.io/
+    icon: https://docs.traefik.io/img/traefik.logo.png
+    keywords:
+    - traefik
+    - ingress
+    - acme
+    - letsencrypt
+    maintainers:
+    - email: kent.rancourt@microsoft.com
+      name: krancour
+    - email: emile@vauge.com
+      name: emilevauge
+    - email: daniel.tomcej@gmail.com
+      name: dtomcej
+    - email: ludovic@containo.us
+      name: ldez
+    name: traefik
+    sources:
+    - https://github.com/containous/traefik
+    - https://github.com/helm/charts/tree/master/stable/traefik
+    urls:
+    - traefik-1.79.1.tgz
+    version: 1.79.1
+generated: "2020-01-15T14:36:04.403785811Z"
