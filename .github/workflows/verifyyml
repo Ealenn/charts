@@ -1,4 +1,4 @@
-name: CI
+name: "Commit signature verification"
 
 on: 
   pull_request:
