@@ -10,7 +10,7 @@
 
 An echo server is a server that replicates the request sent by the client and sends it back.
 
-[Project Repository](https://github.com/Ealenn/Echo-Server) - [Chart Repository](https://github.com/Ealenn/charts)
+More information [Project Repository](https://github.com/Ealenn/Echo-Server)
 
 ## Adding the Repository
 
@@ -38,7 +38,7 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"ealen/echo-server"` | https://hub.docker.com/r/ealen/echo-server |
-| image.tag | string | `"0.2.0"` | https://github.com/Ealenn/Echo-Server/releases |
+| image.tag | string | `"0.3.0"` | https://github.com/Ealenn/Echo-Server/releases |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | object | `{}` | Example `kubernetes.io/ingress.class: nginx` for Nginx Ingress |
 | ingress.enabled | bool | `false` | Enable ingress |
