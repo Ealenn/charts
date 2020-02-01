@@ -1,7 +1,7 @@
 apiVersion: v1
-appVersion: "0.2.0"
-version: 0.1.0
-icon: https://ealenn.github.io/helm-ui/icons/echo-server.png
+appVersion: "0.3.0"
+version: 0.2.0
+icon: https://ealenn.github.io/Echo-Server/assets/images/ping-pong.png
 name: echo-server
 description: Echo-Server for Kubernetes
 keywords:
@@ -9,6 +9,7 @@ keywords:
   - server
   - rest
   - test
+  - api
 home: https://github.com/Ealenn/Echo-Server
 sources:
   - https://github.com/Ealenn/Echo-Server
