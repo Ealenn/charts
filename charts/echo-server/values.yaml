@@ -1,4 +1,4 @@
-# replicaCount -- number of pod replicas
+# replicaCount -- Pod replicas
 replicaCount: 1
 
 image:
@@ -24,11 +24,10 @@ service:
   type: ClusterIP
   port: 80
 
-# ingress -- ingress configuration
 ingress:
   # ingress.enabled -- Enable ingress
   enabled: false
-  # ingress.annotations -- example `kubernetes.io/ingress.class: nginx` for Nginx Ingress
+  # ingress.annotations -- Example `kubernetes.io/ingress.class: nginx` for Nginx Ingress
   annotations: {}
   hosts:
     - host: cluster.local
@@ -50,14 +49,11 @@ tolerations: []
 
 affinity: {}
 
-# application -- Echo-Server configuration
 application:
-  # application.logs -- Enable and Disable logs Features
   logs:
     ignore:
       # application.logs.ignore.ping -- Don't log ping request on route `/ping`
       ping: false
-  # application.enable -- Enable and Disable Echo-Server Features
   enable:
     # application.enable.host -- Enable host in response
     host: true
@@ -65,5 +61,5 @@ application:
     http: true
     # application.enable.host -- Enable request in response
     request: true
-    # application.enable.environment -- Enable environment in response - Show environment variables
+    # application.enable.environment -- Enable environment in response
     environment: true

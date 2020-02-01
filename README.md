@@ -1,12 +1,10 @@
 # Helm Charts - Library for Kubernetes
 
-[![GitHub stars](https://img.shields.io/github/stars/Ealenn/Echo-Server?style=for-the-badge)](https://github.com/Ealenn/Echo-Server/stargazers)
-[![GitHub issues](https://img.shields.io/github/issues/Ealenn/Echo-Server?style=for-the-badge)](https://github.com/Ealenn/Echo-Server/issues)
-[![GitHub license](https://img.shields.io/github/license/Ealenn/Echo-Server?style=for-the-badge)](https://github.com/Ealenn/Echo-Server)
+[![GitHub stars](https://img.shields.io/github/stars/Ealenn/charts?style=for-the-badge)](https://github.com/Ealenn/Echo-Server/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/Ealenn/charts?style=for-the-badge)](https://github.com/Ealenn/Echo-Server/issues)
+[![GitHub license](https://img.shields.io/github/license/Ealenn/charts?style=for-the-badge)](https://github.com/Ealenn/Echo-Server)
 
-Popular applications, provided by [Ealen](https://ealenn.github.io/helm-ui)
-
-User Interface available [here](https://ealenn.github.io/helm-ui)
+Popular applications, provided by [Ealen](https://github.com/Ealenn), charts are available in [Helm Hub](https://hub.helm.sh)
 
 ## TL;DR
 
@@ -18,8 +16,8 @@ helm install ealenn/<chart>
 
 ## Projects
 
-- [Echo-Server](https://ealenn.github.io/helm-ui/#/chart/echo-server) REST Server Tests (Echo-Server) API
-- [Picolors](https://ealenn.github.io/helm-ui/#/chart/picolors) Get prominent color from an image
+- [Echo-Server](https://hub.helm.sh/charts/ealenn/echo-server) REST Server Tests (Echo-Server) API
+- [Picolors](https://hub.helm.sh/charts/ealenn/picolors) Get prominent color from an image
 
 ## Tools
 

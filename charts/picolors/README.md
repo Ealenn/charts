@@ -1,3 +1,6 @@
+# Picolors
+
+> Extract prominent colors from an image
 
 ## Chart Values
 
@@ -9,9 +12,11 @@
 | image.repository | string | `"ealen/picolors"` | https://hub.docker.com/r/ealen/picolors |
 | image.tag | string | `"0.1.0"` | https://github.com/Ealenn/Picolors/releases |
 | imagePullSecrets | list | `[]` |  |
-| ingress | object | `{"annotations":{},"enabled":false,"hosts":[{"host":"cluster.local","paths":["/"]}],"tls":[]}` | ingress configuration |
-| ingress.annotations | object | `{}` | example `kubernetes.io/ingress.class: nginx` for Nginx Ingress |
+| ingress.annotations | object | `{}` | Example `kubernetes.io/ingress.class: nginx` for Nginx Ingress |
 | ingress.enabled | bool | `false` | Enable ingress |
+| ingress.hosts[0].host | string | `"cluster.local"` |  |
+| ingress.hosts[0].paths[0] | string | `"/"` |  |
+| ingress.tls | list | `[]` |  |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
