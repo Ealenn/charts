@@ -45,17 +45,37 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 | ingress.hosts[0].host | string | `"cluster.local"` |  |
 | ingress.hosts[0].paths[0] | string | `"/"` |  |
 | ingress.tls | list | `[]` |  |
+| livenessProbe.failureThreshold | int | `3` |  |
+| livenessProbe.httpGet.httpHeaders | list | `[]` |  |
+| livenessProbe.httpGet.path | string | `"/ping"` |  |
+| livenessProbe.initialDelaySeconds | int | `10` |  |
+| livenessProbe.periodSeconds | int | `10` |  |
+| livenessProbe.successThreshold | int | `1` |  |
+| livenessProbe.timeoutSeconds | int | `5` |  |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
 | replicaCount | int | `1` | Pod replicas |
 | resources.limits.cpu | string | `"50m"` |  |
-| resources.limits.memory | string | `"32Mi"` |  |
+| resources.limits.memory | string | `"128Mi"` |  |
 | resources.requests.cpu | string | `"50m"` |  |
-| resources.requests.memory | string | `"32Mi"` |  |
+| resources.requests.memory | string | `"128Mi"` |  |
 | securityContext | object | `{}` |  |
 | service.port | int | `80` |  |
 | service.type | string | `"ClusterIP"` |  |
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `nil` |  |
 | tolerations | list | `[]` |  |
+
+## Changelog
+
+### 0.2.1
+
+- Customize liveness probe
+- Automatically Roll Deployments
+- Increased default memory allocation
+
+### 0.2.0
+
+- App Version [0.3.0](https://github.com/Ealenn/Echo-Server/releases/tag/0.3.0)
+- Additional Documentation 

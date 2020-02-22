@@ -38,16 +38,26 @@ ingress:
 resources:
   limits:
     cpu: 50m
-    memory: 32Mi
+    memory: 128Mi
   requests:
     cpu: 50m
-    memory: 32Mi
+    memory: 128Mi
 
 nodeSelector: {}
 
 tolerations: []
 
 affinity: {}
+
+livenessProbe:
+  httpGet:
+    path: /ping
+    httpHeaders: []
+  initialDelaySeconds: 5
+  periodSeconds: 10
+  timeoutSeconds: 2
+  failureThreshold: 3
+  successThreshold: 1
 
 application:
   logs:
