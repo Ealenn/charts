@@ -12,6 +12,8 @@ spec:
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
       labels:
         app.kubernetes.io/name: {{ include "echo-server.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
@@ -40,6 +42,12 @@ spec:
             httpGet:
               path: /ping
               port: http
+              httpHeaders: {{ .Values.image.httpHeaders }}
+            initialDelaySeconds: {{ .Values.initialDelaySeconds }}
+            periodSeconds: {{ .Values.periodSeconds }}
+            timeoutSeconds: {{ .Values.timeoutSeconds }}
+            failureThreshold: {{ .Values.failureThreshold }}
+            successThreshold: {{ .Values.successThreshold }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
