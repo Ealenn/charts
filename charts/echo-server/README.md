@@ -72,7 +72,8 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 
 ### 0.2.2
 
-- Fix invalide values in liveness probe
+- Fix invalid values in liveness probe
+- Default liveness value Header `ECHO_CODE` on `/ping` -> HTTP 200 
 
 ### 0.2.1
 
