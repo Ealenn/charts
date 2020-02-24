@@ -46,12 +46,13 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 | ingress.hosts[0].paths[0] | string | `"/"` |  |
 | ingress.tls | list | `[]` |  |
 | livenessProbe.failureThreshold | int | `3` |  |
-| livenessProbe.httpGet.httpHeaders | list | `[]` |  |
+| livenessProbe.httpGet.httpHeaders[0].name | string | `"ECHO_CODE"` |  |
+| livenessProbe.httpGet.httpHeaders[0].value | string | `"200"` |  |
 | livenessProbe.httpGet.path | string | `"/ping"` |  |
-| livenessProbe.initialDelaySeconds | int | `10` |  |
+| livenessProbe.initialDelaySeconds | int | `5` |  |
 | livenessProbe.periodSeconds | int | `10` |  |
 | livenessProbe.successThreshold | int | `1` |  |
-| livenessProbe.timeoutSeconds | int | `5` |  |
+| livenessProbe.timeoutSeconds | int | `2` |  |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
@@ -68,6 +69,10 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 | tolerations | list | `[]` |  |
 
 ## Changelog
+
+### 0.2.2
+
+- Fix invalide values in liveness probe
 
 ### 0.2.1
 

@@ -40,14 +40,17 @@ spec:
                 name: {{ template "echo-server.fullname" . }}
           livenessProbe:
             httpGet:
-              path: /ping
-              port: http
-              httpHeaders: {{ .Values.image.httpHeaders }}
-            initialDelaySeconds: {{ .Values.initialDelaySeconds }}
-            periodSeconds: {{ .Values.periodSeconds }}
-            timeoutSeconds: {{ .Values.timeoutSeconds }}
-            failureThreshold: {{ .Values.failureThreshold }}
-            successThreshold: {{ .Values.successThreshold }}
+                path: {{ .Values.livenessProbe.httpGet.path }}
+                {{- if .Values.livenessProbe.httpGet.httpHeaders }}
+                httpHeaders:
+{{ toYaml .Values.livenessProbe.httpGet.httpHeaders | indent 16 }}
+                {{- end }}
+                port: http
+            initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
+            failureThreshold: {{ .Values.livenessProbe.failureThreshold }}
+            successThreshold: {{ .Values.livenessProbe.successThreshold }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

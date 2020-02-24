@@ -52,7 +52,9 @@ affinity: {}
 livenessProbe:
   httpGet:
     path: /ping
-    httpHeaders: []
+    httpHeaders:
+    - name: ECHO_CODE
+      value: "200"
   initialDelaySeconds: 5
   periodSeconds: 10
   timeoutSeconds: 2
