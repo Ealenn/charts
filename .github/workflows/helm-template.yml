@@ -1,0 +1,22 @@
+name: Helm Template
+
+on:
+  pull_request:
+    branches: master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: azure/setup-helm@v1
+      id: install
+    - name: Helm Templates Validation
+      run: |
+        for D in ./charts/*; do
+            if [ -d "${D}" ]; then
+                helm template --dry-run $D
+            fi
+        done
