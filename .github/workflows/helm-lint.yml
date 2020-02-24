@@ -14,4 +14,4 @@ jobs:
     - uses: azure/setup-helm@v1
       id: install
     - name: Lint charts
-      run: helm lint ./charts/*
+      run: helm lint --strict ./charts/*
