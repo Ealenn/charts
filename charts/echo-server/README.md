@@ -31,6 +31,7 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
 | application.enable.environment | bool | `true` | Enable environment in response |
+| application.enable.file | bool | `true` | Enable file in response |
 | application.enable.host | bool | `true` | Enable request in response |
 | application.enable.http | bool | `true` |  |
 | application.enable.request | bool | `true` |  |
@@ -38,7 +39,7 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"ealen/echo-server"` | https://hub.docker.com/r/ealen/echo-server |
-| image.tag | string | `"0.3.0"` | https://github.com/Ealenn/Echo-Server/releases |
+| image.tag | string | `"0.4.0"` | https://github.com/Ealenn/Echo-Server/releases |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | object | `{}` | Example `kubernetes.io/ingress.class: nginx` for Nginx Ingress |
 | ingress.enabled | bool | `false` | Enable ingress |
@@ -46,7 +47,7 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 | ingress.hosts[0].paths[0] | string | `"/"` |  |
 | ingress.tls | list | `[]` |  |
 | livenessProbe.failureThreshold | int | `3` |  |
-| livenessProbe.httpGet.httpHeaders[0].name | string | `"ECHO_CODE"` |  |
+| livenessProbe.httpGet.httpHeaders[0].name | string | `"X-ECHO-CODE"` |  |
 | livenessProbe.httpGet.httpHeaders[0].value | string | `"200"` |  |
 | livenessProbe.httpGet.path | string | `"/ping"` |  |
 | livenessProbe.initialDelaySeconds | int | `5` |  |
@@ -70,6 +71,11 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 
 ## Changelog
 
+### 0.3.0
+
+- App Version [0.4.0](https://github.com/Ealenn/Echo-Server/releases/tag/0.4.0)
+- Fix Header `X-ECHO-CODE`
+
 ### 0.2.2
 
 - Fix invalid values in liveness probe
@@ -84,4 +90,4 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 ### 0.2.0
 
 - App Version [0.3.0](https://github.com/Ealenn/Echo-Server/releases/tag/0.3.0)
-- Additional Documentation 
+- Additional Documentation

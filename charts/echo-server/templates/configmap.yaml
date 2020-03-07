@@ -1,7 +1,7 @@
 apiVersion:  v1
-kind:  ConfigMap
+kind: ConfigMap
 metadata: 
-  name:  {{ template "echo-server.fullname" . }}
+  name: {{ template "echo-server.fullname" . }}
 data: 
     PORT: {{ .Values.service.port  | quote }}
     LOGS__IGNORE__PING: {{ .Values.application.logs.ignore.ping  | quote }}
@@ -9,3 +9,4 @@ data:
     ENABLE__HTTP: {{ .Values.application.enable.http  | quote }}
     ENABLE__REQUEST: {{ .Values.application.enable.request  | quote }}
     ENABLE__ENVIRONMENT: {{ .Values.application.enable.environment  | quote }}
+    ENABLE__FILE: {{ .Values.application.enable.file  | quote }}
