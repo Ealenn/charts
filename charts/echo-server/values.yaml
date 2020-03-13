@@ -69,9 +69,9 @@ application:
   enable:
     # application.enable.host -- Enable host in response
     host: true
-    # application.enable.host -- Enable http in response
+    # application.enable.http -- Enable http in response
     http: true
-    # application.enable.host -- Enable request in response
+    # application.enable.request -- Enable request in response
     request: true
     # application.enable.environment -- Enable environment in response
     environment: true
