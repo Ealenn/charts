@@ -10,7 +10,7 @@
 
 An echo server is a server that replicates the request sent by the client and sends it back.
 
-More information [Project Repository](https://github.com/Ealenn/Echo-Server)
+More information/documentation [Project Repository](https://github.com/Ealenn/Echo-Server)
 
 ## Adding the Repository
 
@@ -30,16 +30,17 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
+| application.commands.httpCode.headerResponse | bool | `true` | Add debug header for custom status code |
 | application.enable.environment | bool | `true` | Enable environment in response |
 | application.enable.file | bool | `true` | Enable file in response |
-| application.enable.host | bool | `true` | Enable request in response |
-| application.enable.http | bool | `true` |  |
-| application.enable.request | bool | `true` |  |
+| application.enable.host | bool | `true` | Enable host in response |
+| application.enable.http | bool | `true` | Enable http in response |
+| application.enable.request | bool | `true` | Enable request in response |
 | application.logs.ignore.ping | bool | `false` | Don't log ping request on route `/ping` |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"ealen/echo-server"` | https://hub.docker.com/r/ealen/echo-server |
-| image.tag | string | `"0.4.0"` | https://github.com/Ealenn/Echo-Server/releases |
+| image.tag | string | `"0.4.1"` | https://github.com/Ealenn/Echo-Server/releases |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | object | `{}` | Example `kubernetes.io/ingress.class: nginx` for Nginx Ingress |
 | ingress.enabled | bool | `false` | Enable ingress |
@@ -47,7 +48,7 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 | ingress.hosts[0].paths[0] | string | `"/"` |  |
 | ingress.tls | list | `[]` |  |
 | livenessProbe.failureThreshold | int | `3` |  |
-| livenessProbe.httpGet.httpHeaders[0].name | string | `"X-ECHO-CODE"` |  |
+| livenessProbe.httpGet.httpHeaders[0].name | string | `"x-echo-code"` |  |
 | livenessProbe.httpGet.httpHeaders[0].value | string | `"200"` |  |
 | livenessProbe.httpGet.path | string | `"/ping"` |  |
 | livenessProbe.initialDelaySeconds | int | `5` |  |
@@ -70,6 +71,11 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 | tolerations | list | `[]` |  |
 
 ## Changelog
+
+### 0.4.0
+
+- App Version [0.4.1](https://github.com/Ealenn/Echo-Server/releases/tag/0.4.1)
+- Additional Documentation *(thanks prasadkatti)*
 
 ### 0.3.0
 
