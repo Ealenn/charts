@@ -4,13 +4,14 @@
 [![GitHub stars](https://img.shields.io/github/stars/Ealenn/Echo-Server?style=for-the-badge&logo=github)](https://github.com/Ealenn/Echo-Server/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/Ealenn/Echo-Server?style=for-the-badge&logo=github)](https://github.com/Ealenn/Echo-Server/issues)
 [![DockerHub](https://img.shields.io/docker/pulls/ealen/echo-server.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/repository/docker/ealen/echo-server)
-[![DockerHub](https://img.shields.io/badge/SIZE-%3C%2013%20MB-1488C6?style=for-the-badge&logo=docker)](https://hub.docker.com/repository/docker/ealen/echo-server)
+[![DockerHub](https://img.shields.io/badge/SIZE-%3C%2030%20MB-1488C6?style=for-the-badge&logo=docker)](https://hub.docker.com/repository/docker/ealen/echo-server)
 
-> Read the docs : [https://ealenn.github.io/Echo-Server](https://ealenn.github.io/Echo-Server) - Read the [release notes](https://github.com/Ealenn/Echo-Server/releases)
+> - Read the docs : [https://ealenn.github.io/Echo-Server](https://ealenn.github.io/Echo-Server)
+> - Read the [release notes](https://github.com/Ealenn/Echo-Server/releases)
 
 An echo server is a server that replicates the request sent by the client and sends it back.
 
-More information [Project Repository](https://github.com/Ealenn/Echo-Server)
+More information/documentation [Project Repository](https://github.com/Ealenn/Echo-Server)
 
 ## Adding the Repository
 
@@ -32,14 +33,15 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 | affinity | object | `{}` |  |
 | application.enable.environment | bool | `true` | Enable environment in response |
 | application.enable.file | bool | `true` | Enable file in response |
-| application.enable.host | bool | `true` | Enable request in response |
-| application.enable.http | bool | `true` |  |
-| application.enable.request | bool | `true` |  |
+| application.enable.header | bool | `true` | Enable custom header in response |
+| application.enable.host | bool | `true` | Enable host in response |
+| application.enable.http | bool | `true` | Enable http in response |
+| application.enable.request | bool | `true` | Enable request in response |
 | application.logs.ignore.ping | bool | `false` | Don't log ping request on route `/ping` |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"ealen/echo-server"` | https://hub.docker.com/r/ealen/echo-server |
-| image.tag | string | `"0.4.0"` | https://github.com/Ealenn/Echo-Server/releases |
+| image.tag | string | `"0.4.2"` | https://github.com/Ealenn/Echo-Server/releases |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | object | `{}` | Example `kubernetes.io/ingress.class: nginx` for Nginx Ingress |
 | ingress.enabled | bool | `false` | Enable ingress |
@@ -47,7 +49,7 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 | ingress.hosts[0].paths[0] | string | `"/"` |  |
 | ingress.tls | list | `[]` |  |
 | livenessProbe.failureThreshold | int | `3` |  |
-| livenessProbe.httpGet.httpHeaders[0].name | string | `"X-ECHO-CODE"` |  |
+| livenessProbe.httpGet.httpHeaders[0].name | string | `"x-echo-code"` |  |
 | livenessProbe.httpGet.httpHeaders[0].value | string | `"200"` |  |
 | livenessProbe.httpGet.path | string | `"/ping"` |  |
 | livenessProbe.initialDelaySeconds | int | `5` |  |
@@ -66,10 +68,16 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 | service.port | int | `80` |  |
 | service.type | string | `"ClusterIP"` |  |
 | serviceAccount.create | bool | `true` |  |
-| serviceAccount.name | string | `nil` |  |
+| serviceAccount.name | string | `""` |  |
 | tolerations | list | `[]` |  |
 
 ## Changelog
+
+### 0.4.0
+
+- App Version [0.4.2](https://github.com/Ealenn/Echo-Server/releases/tag/0.4.2)
+- Increased architecture
+- Additional Documentation *(thanks prasadkatti)*
 
 ### 0.3.0
 

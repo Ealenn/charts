@@ -5,7 +5,7 @@ image:
   # image.repository -- https://hub.docker.com/r/ealen/echo-server
   repository: ealen/echo-server
   # image.tag -- https://github.com/Ealenn/Echo-Server/releases
-  tag: 0.4.0
+  tag: 0.4.2
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -14,7 +14,7 @@ fullnameOverride: ""
 
 serviceAccount:
   create: true
-  name:
+  name: ""
 
 podSecurityContext: {}
 
@@ -53,7 +53,7 @@ livenessProbe:
   httpGet:
     path: /ping
     httpHeaders:
-    - name: X-ECHO-CODE
+    - name: x-echo-code
       value: "200"
   initialDelaySeconds: 5
   periodSeconds: 10
@@ -77,3 +77,5 @@ application:
     environment: true
     # application.enable.file -- Enable file in response
     file: true
+    # application.enable.header -- Enable custom header in response
+    header: true
