@@ -68,7 +68,7 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 | service.port | int | `80` |  |
 | service.type | string | `"ClusterIP"` |  |
 | serviceAccount.create | bool | `true` |  |
-| serviceAccount.name | string | `nil` |  |
+| serviceAccount.name | string | `""` |  |
 | tolerations | list | `[]` |  |
 
 ## Changelog
