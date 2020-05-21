@@ -4,13 +4,14 @@
 [![GitHub stars](https://img.shields.io/github/stars/Ealenn/Echo-Server?style=for-the-badge&logo=github)](https://github.com/Ealenn/Echo-Server/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/Ealenn/Echo-Server?style=for-the-badge&logo=github)](https://github.com/Ealenn/Echo-Server/issues)
 [![DockerHub](https://img.shields.io/docker/pulls/ealen/echo-server.svg?style=for-the-badge&logo=docker)](https://hub.docker.com/repository/docker/ealen/echo-server)
-[![DockerHub](https://img.shields.io/badge/SIZE-%3C%2013%20MB-1488C6?style=for-the-badge&logo=docker)](https://hub.docker.com/repository/docker/ealen/echo-server)
+[![DockerHub](https://img.shields.io/badge/SIZE-%3C%2030%20MB-1488C6?style=for-the-badge&logo=docker)](https://hub.docker.com/repository/docker/ealen/echo-server)
 
-> Read the docs : [https://ealenn.github.io/Echo-Server](https://ealenn.github.io/Echo-Server) - Read the [release notes](https://github.com/Ealenn/Echo-Server/releases)
+> - Read the docs : [https://ealenn.github.io/Echo-Server](https://ealenn.github.io/Echo-Server)
+> - Read the [release notes](https://github.com/Ealenn/Echo-Server/releases)
 
 An echo server is a server that replicates the request sent by the client and sends it back.
 
-More information [Project Repository](https://github.com/Ealenn/Echo-Server)
+More information/documentation [Project Repository](https://github.com/Ealenn/Echo-Server)
 
 ## Adding the Repository
 
@@ -28,6 +29,12 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 {{ template "chart.valuesSection" . }}
 
 ## Changelog
+
+### 0.4.0
+
+- App Version [0.4.2](https://github.com/Ealenn/Echo-Server/releases/tag/0.4.2)
+- Increased architecture
+- Additional Documentation *(thanks prasadkatti)*
 
 ### 0.3.0
 
