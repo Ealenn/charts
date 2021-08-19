@@ -65,7 +65,7 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 | resources.requests.cpu | string | `"50m"` |  |
 | resources.requests.memory | string | `"128Mi"` |  |
 | securityContext | object | `{}` |  |
-| service.port | int | `80` |  |
+| service.port | int | `80` | For k8s >= 1.19 use port number not name |
 | service.type | string | `"ClusterIP"` |  |
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
@@ -78,6 +78,10 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 - App Version [0.4.2](https://github.com/Ealenn/Echo-Server/releases/tag/0.4.2)
 - Increased architecture
 - Additional Documentation *(thanks prasadkatti)*
+
+### 0.3.1
+
+- Use networking.k8s.io/v1 API for Ingress on kubernetes >= 1.19
 
 ### 0.3.0
 
