@@ -26,7 +26,7 @@ helm repo update
 helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 ```
 
-## Chart Values
+## Values
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
@@ -47,6 +47,7 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 | ingress.enabled | bool | `false` | Enable ingress |
 | ingress.hosts[0].host | string | `"cluster.local"` |  |
 | ingress.hosts[0].paths[0] | string | `"/"` |  |
+| ingress.ingressClassName | string | `""` |  |
 | ingress.tls | list | `[]` |  |
 | livenessProbe.failureThreshold | int | `3` |  |
 | livenessProbe.httpGet.httpHeaders[0].name | string | `"x-echo-code"` |  |
@@ -75,13 +76,13 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 
 ### 0.4.0
 
-- App Version [0.4.2](https://github.com/Ealenn/Echo-Server/releases/tag/0.4.2)
-- Increased architecture
-- Additional Documentation *(thanks prasadkatti)*
+- Add support for ingressClassName
 
 ### 0.3.1
 
-- Use networking.k8s.io/v1 API for Ingress on kubernetes >= 1.19
+- App Version [0.4.2](https://github.com/Ealenn/Echo-Server/releases/tag/0.4.2)
+- Increased architecture
+- Additional Documentation *(thanks prasadkatti)*
 
 ### 0.3.0
 
@@ -91,7 +92,7 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 ### 0.2.2
 
 - Fix invalid values in liveness probe
-- Default liveness value Header `ECHO_CODE` on `/ping` -> HTTP 200 
+- Default liveness value Header `ECHO_CODE` on `/ping` -> HTTP 200
 
 ### 0.2.1
 

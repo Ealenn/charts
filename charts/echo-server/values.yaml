@@ -22,16 +22,18 @@ securityContext: {}
 
 service:
   type: ClusterIP
+  # service.port -- For k8s >= 1.19 use port number not name
   port: 80
 
 ingress:
   # ingress.enabled -- Enable ingress
   enabled: false
+  ingressClassName: ""
   # ingress.annotations -- Example `kubernetes.io/ingress.class: nginx` for Nginx Ingress
   annotations: {}
   hosts:
     - host: cluster.local
-      paths: 
+      paths:
         - /
   tls: []
 
