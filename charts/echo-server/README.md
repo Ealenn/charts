@@ -77,6 +77,7 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 ### 0.4.0
 
 - Add support for ingressClassName
+- Update echo to 0.5.1
 
 ### 0.3.1
 
