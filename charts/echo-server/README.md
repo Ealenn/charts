@@ -31,6 +31,7 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
+| application.enable.cookies | bool | `true` | Enable cookies in response |
 | application.enable.environment | bool | `true` | Enable environment in response |
 | application.enable.file | bool | `true` | Enable file in response |
 | application.enable.header | bool | `true` | Enable custom header in response |
@@ -41,7 +42,7 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"ealen/echo-server"` | https://hub.docker.com/r/ealen/echo-server |
-| image.tag | string | `"0.4.2"` | https://github.com/Ealenn/Echo-Server/releases |
+| image.tag | string | `"0.6.0"` | https://github.com/Ealenn/Echo-Server/releases |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | object | `{}` | Example `kubernetes.io/ingress.class: nginx` for Nginx Ingress |
 | ingress.enabled | bool | `false` | Enable ingress |
@@ -73,6 +74,10 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 | tolerations | list | `[]` |  |
 
 ## Changelog
+
+### 0.5.0
+
+- Update echo to 0.6.0 *(thanks @XenGi)*
 
 ### 0.4.0
 

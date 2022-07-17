@@ -8,6 +8,7 @@ data:
     ENABLE__HOST: {{ .Values.application.enable.host  | quote }}
     ENABLE__HTTP: {{ .Values.application.enable.http  | quote }}
     ENABLE__REQUEST: {{ .Values.application.enable.request  | quote }}
+    ENABLE__COOKIES: {{ .Values.application.enable.cookies  | quote }}
     ENABLE__ENVIRONMENT: {{ .Values.application.enable.environment  | quote }}
     ENABLE__FILE: {{ .Values.application.enable.file  | quote }}
     ENABLE__HEADER: {{ .Values.application.enable.header  | quote }}
