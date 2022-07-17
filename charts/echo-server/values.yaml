@@ -5,7 +5,7 @@ image:
   # image.repository -- https://hub.docker.com/r/ealen/echo-server
   repository: ealen/echo-server
   # image.tag -- https://github.com/Ealenn/Echo-Server/releases
-  tag: 0.5.1
+  tag: 0.6.0
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -75,6 +75,8 @@ application:
     http: true
     # application.enable.request -- Enable request in response
     request: true
+    # application.enable.cookies -- Enable cookies in response
+    cookies: true
     # application.enable.environment -- Enable environment in response
     environment: true
     # application.enable.file -- Enable file in response

@@ -2,7 +2,7 @@
 
 > Extract prominent colors from an image
 
-## Chart Values
+## Values
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|

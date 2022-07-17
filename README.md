@@ -22,7 +22,7 @@ helm install ealenn/<chart>
 ## Tools
 
 ```bash
-helm-docs ./charts/*
+docker run --rm --volume "$(pwd):/helm-docs" -u $(id -u) jnorwood/helm-docs:latest
 ```
 
 - [norwoodj/helm-docs](https://github.com/norwoodj/helm-docs) A tool for automatically generating markdown documentation for helm charts
