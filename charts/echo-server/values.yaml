@@ -37,6 +37,10 @@ ingress:
       paths:
         - /
   tls: []
+  auth:
+    enabled: false
+    username: admin
+    password: ""
 
 resources:
   limits:
