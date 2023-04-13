@@ -2,8 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ include "echo-server.fullname" . }}
-  labels:
-{{ include "echo-server.labels" . | indent 4 }}
+  labels: {{- include "echo-server.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:

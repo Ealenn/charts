@@ -16,6 +16,8 @@ serviceAccount:
   create: true
   name: ""
 
+podAnnotations: {}
+
 podSecurityContext: {}
 
 securityContext: {}

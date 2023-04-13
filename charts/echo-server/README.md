@@ -63,6 +63,7 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 | livenessProbe.timeoutSeconds | int | `2` |  |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
+| podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
 | replicaCount | int | `1` | Pod replicas |
 | resources.limits.cpu | string | `"50m"` |  |
@@ -82,6 +83,7 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 
 - Update ingress to be fully compatible with latest Kubernetes versions *(thanks @treksler)*
 - Add optional Basic Auth to Ingress *(thanks @treksler)*
+- Add podAnnotations *(thanks @treksler)*
 
 ### 0.5.0
 
