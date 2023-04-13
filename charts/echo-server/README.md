@@ -45,10 +45,13 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 | image.tag | string | `"0.6.0"` | https://github.com/Ealenn/Echo-Server/releases |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | object | `{}` | Example `kubernetes.io/ingress.class: nginx` for Nginx Ingress |
+| ingress.auth.enabled | bool | `false` |  |
+| ingress.auth.password | string | `""` |  |
+| ingress.auth.username | string | `"admin"` |  |
+| ingress.className | string | `""` | Example `nginx` for Nginx Ingress |
 | ingress.enabled | bool | `false` | Enable ingress |
 | ingress.hosts[0].host | string | `"cluster.local"` |  |
 | ingress.hosts[0].paths[0] | string | `"/"` |  |
-| ingress.ingressClassName | string | `""` |  |
 | ingress.tls | list | `[]` |  |
 | livenessProbe.failureThreshold | int | `3` |  |
 | livenessProbe.httpGet.httpHeaders[0].name | string | `"x-echo-code"` |  |
@@ -74,6 +77,11 @@ helm upgrade -i ${name} ealenn/echo-server --namespace ${namespace} --force
 | tolerations | list | `[]` |  |
 
 ## Changelog
+
+### 0.6.0
+
+- Update ingress to be fully compatible with latest Kubernetes versions *(thanks @treksler)*
+- Add optional Basic Auth to Ingress *(thanks @treksler)*
 
 ### 0.5.0
 
