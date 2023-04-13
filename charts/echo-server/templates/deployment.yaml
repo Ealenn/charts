@@ -2,8 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "echo-server.fullname" . }}
-  labels:
-{{ include "echo-server.labels" . | indent 4 }}
+  labels: {{ include "echo-server.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -13,22 +12,22 @@ spec:
   template:
     metadata:
       annotations:
+        {{- with .Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
       labels:
         app.kubernetes.io/name: {{ include "echo-server.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
-    {{- with .Values.imagePullSecrets }}
-      imagePullSecrets:
-        {{- toYaml . | nindent 8 }}
-    {{- end }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets: {{- toYaml . | nindent 8 }}
+      {{- end }}
       serviceAccountName: {{ template "echo-server.serviceAccountName" . }}
-      securityContext:
-        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      securityContext: {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
-          securityContext:
-            {{- toYaml .Values.securityContext | nindent 12 }}
+          securityContext: {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
@@ -40,28 +39,23 @@ spec:
                 name: {{ template "echo-server.fullname" . }}
           livenessProbe:
             httpGet:
-                path: {{ .Values.livenessProbe.httpGet.path }}
-                {{- if .Values.livenessProbe.httpGet.httpHeaders }}
-                httpHeaders:
-{{ toYaml .Values.livenessProbe.httpGet.httpHeaders | indent 16 }}
-                {{- end }}
-                port: http
+              path: {{ .Values.livenessProbe.httpGet.path }}
+              {{- if .Values.livenessProbe.httpGet.httpHeaders }}
+              httpHeaders: {{- toYaml .Values.livenessProbe.httpGet.httpHeaders | nindent 16 }}
+              {{- end }}
+              port: http
             initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
             periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
             timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
             failureThreshold: {{ .Values.livenessProbe.failureThreshold }}
             successThreshold: {{ .Values.livenessProbe.successThreshold }}
-          resources:
-            {{- toYaml .Values.resources | nindent 12 }}
+          resources: {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
-      nodeSelector:
-        {{- toYaml . | nindent 8 }}
+      nodeSelector: {{- toYaml . | nindent 8 }}
       {{- end }}
-    {{- with .Values.affinity }}
-      affinity:
-        {{- toYaml . | nindent 8 }}
-    {{- end }}
-    {{- with .Values.tolerations }}
-      tolerations:
-        {{- toYaml . | nindent 8 }}
-    {{- end }}
+      {{- with .Values.affinity }}
+      affinity: {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations: {{- toYaml . | nindent 8 }}
+      {{- end }}
