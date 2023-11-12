@@ -44,7 +44,7 @@ spec:
                 name: {{ $fullName }}
                 port:
                   number: {{ $svcPort }}
-            pathType: ImplementationSpecific
+            pathType: {{ $.Values.ingress.pathType }}
         {{- end }}
   {{- end -}}
   {{- else -}}
